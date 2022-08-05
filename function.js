@@ -22,6 +22,7 @@ let isPlaying = false;
 function playToggle() {
     if (!isPlaying) {
         player.playVideo();
+        player.seekTo(player.getDuration());
         icon.src = "https://icons.veryicon.com/png/o/object/material-design-icons-1/pause-38.png";
         isPlaying = true;
     }
