@@ -5,9 +5,11 @@
 }
 
 body {
-    color: black;
     font-family: arial;
     background-color: black;
+    background-image: url("https://cdn.discordapp.com/attachments/1005274376679211132/1005330829083410462/send_1_1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #content-wrap {
@@ -17,26 +19,46 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    gap: 100px;
+}
+
+#logo {
+    width: 80px;
+    height: 80px;
+}
+
+#content-wrap-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #content-div {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-top: 200px;
     flex-direction: row;
 }
 
 @media (max-width: 800px) {
     #content-div {
       flex-direction: column;
+      gap: 20px;
     }
 }
 
 #emblem {
     width: 70px;
     height: 70px;
+}
+
+#emblem:hover {
+    filter: drop-shadow(0 0 0.2rem white);
 }
 
 .youtube-icon {
@@ -75,5 +97,4 @@ body {
 #emblems {
     display: flex;
     gap: 25px;
-    margin-top: 150px;
 }
