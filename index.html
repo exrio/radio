@@ -15,17 +15,20 @@
         <img id="logo" src="https://cdn.discordapp.com/attachments/972899237111152660/1005299265293271180/unknown.png" alt="Qardasha Radio">
         
         <div id="content-wrap-div">
-            <div id="content-div">
-                <div class="play-pause" data-video="" data-autoplay="0" data-loop="0" onclick="playToggle()">
-                    <img src="https://www.pngall.com/wp-content/uploads/9/White-Play-Silhoutte-PNG1.png" alt="" class="youtube-icon">
-                </div>
-            
-                <div id="line"></div>
+            <div id="radio-stations">
+                <button class="radio-station-button" value="fgq7kMgnAG0" onclick="changeRadioStation(value)">MKH.1</button>
+                <button class="radio-station-button" value="gUC3TjCrwRw" onclick="changeRadioStation(value)">MDN.1</button>
+                <button class="radio-station-button" value="nJmibuE3QwM" onclick="changeRadioStation(value)">SHRJ.1</button>
             </div>
-    
-            <div id="location-div">
-                <p id="location-p">Live from Makkah</p>
-                <div id="circle"></div>
+
+            <div id="radio-wrap-div">
+                <div id="radio-div">
+                    <div class="play-pause" data-video="" data-autoplay="1" data-loop="0" onclick="playToggle()">
+                        <img src="https://www.pngall.com/wp-content/uploads/9/White-Play-Silhoutte-PNG1.png" alt="" class="youtube-icon">
+                    </div>
+                
+                    <div id="line"></div>
+                </div>
             </div>
         </div>
 
