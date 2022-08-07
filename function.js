@@ -1,3 +1,7 @@
+let selectedRadioStation = localStorage.getItem("selectedRadioStation") || "fgq7kMgnAG0";
+
+let radioStationButtons = document.querySelectorAll(".radio-station-button");
+
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -9,15 +13,26 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '0',
-    width: '0'
+    width: '0',
+    playerVars: {
+        autoplay: 1,
+        loop: 0
+    },
+    events: {
+        'onReady': onPlayerReady
+    }
   });
   ctr = document.getElementById("player");
-  updateSurah();
+  changeRadioStation(selectedRadioStation);
 }
 
 let icon = document.querySelector(".youtube-icon");
 
 let isPlaying = false;
+
+function onPlayerReady(event) {
+    player.playVideo();
+}
 
 function playToggle() {
     if (!isPlaying) {
@@ -33,6 +48,18 @@ function playToggle() {
     }
 }
 
-function updateSurah() {
-    ctr.src = `https://www.youtube.com/embed/fgq7kMgnAG0?autoplay=0&loop=0&enablejsapi=1&widgetid=1`;
+function changeRadioStation(value) {
+    selectedRadioStation = value;
+    localStorage.setItem("selectedRadioStation", selectedRadioStation);
+    findSelectedButton();
+    ctr.src = `https://www.youtube.com/embed/${selectedRadioStation}?autoplay=0&loop=0&enablejsapi=1&widgetid=1`;
+}
+
+function findSelectedButton() {
+    for (let index = 0; index < radioStationButtons.length; index++) {
+        if (radioStationButtons[index].value == selectedRadioStation) {
+            radioStationButtons[index].classList.add("selected-button")
+        }
+        else radioStationButtons[index].classList.remove("selected-button");
+    }
 }
