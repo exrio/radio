@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -31,22 +31,52 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+}
+
+#radio-div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 3px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-#content-div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-direction: row;
+#radio-stations {
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.radio-station-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.radio-station-button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.selected-button {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+.selected-button:hover {
+    background-color: rgba(0, 90, 0, 0.5);
 }
 
 @media (max-width: 800px) {
-    #content-div {
+    #radio-div {
       flex-direction: column;
       gap: 20px;
     }
@@ -76,22 +106,6 @@ body {
     height: 5px;
     background-color: red;
     border-radius: 3px;
-}
-
-#circle {
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    border-radius: 50%;
-}
-
-#location-div {
-    display: flex;
-    gap: 10px;
-}
-
-#location-p {
-    color: grey;
 }
 
 #emblems {
