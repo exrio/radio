@@ -29,9 +29,11 @@ function onYouTubeIframeAPIReady() {
 let icon = document.querySelector(".youtube-icon");
 
 let isPlaying = false;
+let hasLoaded = false;
 
 function onPlayerReady(event) {
     player.playVideo();
+    hasLoaded = true;
 }
 
 function playToggle() {
@@ -49,6 +51,11 @@ function playToggle() {
 }
 
 function changeRadioStation(value) {
+    if (hasLoaded) {
+        icon.src = "https://icons.veryicon.com/png/o/object/material-design-icons-1/pause-38.png"
+        isPlaying = true;
+    }
+
     selectedRadioStation = value;
     localStorage.setItem("selectedRadioStation", selectedRadioStation);
     findSelectedButton();
